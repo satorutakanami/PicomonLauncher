@@ -1,0 +1,29 @@
+{
+	"name": "Picomon Launcher",
+	"version": "0.15",
+	"manifest_version": 2,
+	"icons": {
+		"32": "images/icon32.png"
+	},
+	"browser_action": {
+		"default_title": "Picomon Launcher",
+		"default_popup": "popup.html",
+		"default_icon": {
+			"32": "images/icon32.png"
+		}
+	},
+	"background": {
+		"page": "background.html"
+	},
+	"content_scripts": [
+		{
+			"matches": ["http://*/*","http://*/*"],
+			"js": ["js/contentsScript.js"],
+			"run_at": "document_end"
+		}
+	],
+	"permissions": [
+		"tabs",
+		"http://*/*"
+	]
+}
